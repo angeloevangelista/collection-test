@@ -14,7 +14,8 @@ namespace CollectionTest.Entities
     }
 
     public int Id { get; set; }
-    public IReadOnlyCollection<Apelido> Apelidos { get => _apelidos.ToArray(); }
+    public string Nome { get; set; }
+    public IEnumerable<Apelido> Apelidos { get => _apelidos.AsEnumerable(); }
 
     public void DarApelido(Apelido apelido)
     {

@@ -9,5 +9,10 @@ namespace CollectionTest.Entities
     public int HumanoId { get; set; }
     public Humano Humano { get; set; }
     public string Conteudo { get; set; }
+
+    public Apelido(string conteudo)
+    {
+      Conteudo = conteudo;
+    }
   }
 }

@@ -1,0 +1,32 @@
+GET http://127.0.0.1:5000/humanos HTTP/1.1
+
+###
+
+GET http://127.0.0.1:5000/humanos/1 HTTP/1.1
+
+###
+
+POST http://127.0.0.1:5000/humanos HTTP/1.1
+content-type: application/json
+
+{
+  "Nome": "Angelo",
+  "Apelidos": [
+    {
+      "Conteudo": "Angelao"
+    }
+  ]
+}
+
+###
+
+PUT http://127.0.0.1:5000/humanos/1 HTTP/1.1
+content-type: application/json
+
+{
+  "Nome": "Angelo Evangelista"
+}
+
+###
+
+DELETE http://127.0.0.1:5000/humanos/1 HTTP/1.1

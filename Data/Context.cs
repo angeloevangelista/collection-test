@@ -20,14 +20,13 @@ namespace CollectionTest.Data
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
       modelBuilder.Entity<Apelido>().HasKey(pre => pre.Id);
-
       modelBuilder.Entity<Humano>().HasKey(pre => pre.Id);
-      modelBuilder.Entity<Humano>().Property(pre => pre.Apelidos);
 
       modelBuilder.Entity<Humano>()
-        .HasMany<Apelido>()
+        .HasMany<Apelido>(pre => pre.Apelidos)
         .WithOne(pre => pre.Humano)
-        .HasForeignKey(pre => pre.HumanoId);
+        .HasForeignKey(pre => pre.HumanoId)
+        .OnDelete(DeleteBehavior.Cascade);
     }
   }
 }
